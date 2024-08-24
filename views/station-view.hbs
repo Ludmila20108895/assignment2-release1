@@ -30,13 +30,30 @@
     <button class="button is-primary">Submit Report</button>
   </form>
 
-  <!-- Display existing reports -->
+  <!-- Table to display reports -->
   <section class="section">
     <h2 class="title">Reports</h2>
-    <ul>
-      {{#each reports}}
-        <li>Code: {{this.code}}, Temperature: {{this.temperature}}, Wind Speed: {{this.windSpeed}}, Wind Direction: {{this.windDirection}}, Pressure: {{this.pressure}}</li>
-      {{/each}}
-    </ul>
+    <table class="table is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Temp</th>
+          <th>Wind Speed</th>
+          <th>Wind Direction</th>
+          <th>Pressure</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each reports}}
+        <tr>
+          <td>{{this.code}}</td>
+          <td>{{this.temperature}}</td>
+          <td>{{this.windSpeed}}</td>
+          <td>{{this.windDirection}}</td>
+          <td>{{this.pressure}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
   </section>
 </section>
