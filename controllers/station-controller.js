@@ -3,7 +3,7 @@ import { stationStore } from "../models/station-store.js";
 export const stationController = {
   async viewStation(request, response) {
     const stationId = request.params.id;
-    const station = await stationStore.getStationById(stationId);
+    const station = await stationStore.getStationById(request.params.id);
     const viewData = {
       title: station.title,
       station: station,
