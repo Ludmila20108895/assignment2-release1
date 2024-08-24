@@ -5,6 +5,9 @@
     {{station.title}}
   </div>
 
+  <!-- Include the list-reports partial -->
+  {{> list-reports}}
+
   <!-- Form to add a new report -->
   <form class="box" action="/station/{{station._id}}/addreport" method="POST">
     <label>Enter Report Details:</label>
@@ -29,31 +32,4 @@
     </div>
     <button class="button is-primary">Submit Report</button>
   </form>
-
-  <!-- Table to display reports -->
-  <section class="section">
-    <h2 class="title">Reports</h2>
-    <table class="table is-striped is-fullwidth">
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Temp</th>
-          <th>Wind Speed</th>
-          <th>Wind Direction</th>
-          <th>Pressure</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each reports}}
-        <tr>
-          <td>{{this.code}}</td>
-          <td>{{this.temperature}}</td>
-          <td>{{this.windSpeed}}</td>
-          <td>{{this.windDirection}}</td>
-          <td>{{this.pressure}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </section>
 </section>
