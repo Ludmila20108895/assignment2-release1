@@ -9,7 +9,7 @@ export const stationController = {
       station: station,
     };
     console.log(`Rendering station ${station.title}`);
-    response.render("station-icon-view", viewData);// rendering the station-icon-view.hbs
+    response.render("station-view", viewData);
   },
 
   async deleteStation(request, response) {
