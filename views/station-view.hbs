@@ -1,0 +1,40 @@
+{{> menu active="stations"}}
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Add New Station</h1>
+    <form action="/stations/add" method="POST">
+      <div class="field">
+        <label class="label">Station Name</label>
+        <div class="control">
+          <input class="input" type="text" name="title" placeholder="Enter station name" required>
+        </div>
+      </div>
+      <div class="control">
+        <button class="button is-link">Add Station</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">{{title}}</h1>
+    <div class="content">
+      {{#each stations}}
+      <a href="/station/{{this._id}}">
+        <div class="box is-flex is-align-items-center">
+          <div class="mr-3">
+            
+            <!-- Adding  icon: open_file.png-->
+            <figure class="image is-48x48">
+                <img src="https://cdn.glitch.global/15a2efd3-f840-49ac-a10b-ac8fe4da5196/open_file.png?v=1724106774215" alt="Open File Icon">
+              </figure>
+            </div>
+            <h2 class="subtitle has-text-weight-bold">{{this.title}}</h2>
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</section>
